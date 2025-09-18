@@ -1,9 +1,18 @@
-import { Sequelize } from 'sequelize';
+import {Sequelize} from 'sequelize';
 
-const sequelize = new Sequelize({
-  dialect: 'sqlite',
-  storage: './database.sqlite', // Caminho do arquivo do banco
-  logging: false, // Opcional: desativa logs SQL
+export const sequelize = new Sequelize({
+    dialect: 'sqlite',
+    storage: './database.sqlite',
+    logging: false
 });
+
+export const connectDatabase = async () => {
+    try {
+        await sequelize.authenticate();
+        await sequelize.sync();
+    } catch (error) {
+        console.log("Erro ao conectar com o banco. ",error);
+    }
+}
 
 export default sequelize;
