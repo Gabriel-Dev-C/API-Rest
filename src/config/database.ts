@@ -14,3 +14,5 @@ export const connectDatabase = async () => {
         console.log("Erro ao conectar com o banco. ",error);
     }
 }
+
+export default sequelize;
