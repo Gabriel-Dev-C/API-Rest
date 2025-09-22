@@ -29,6 +29,16 @@ app.listen(PORT, () => {
   console.log(`Servidor rodando na porta ${PORT}`);
 });
 
+
+Vamos começar com um exemplo simples de consumo de uma API pública usando JavaScript.
+Utilizaremos o método fetch, que é uma API moderna para realizar requisições HTTP.
+
+Exemplo de requisição GET para uma API pública:
+
+fetch('https://jsonplaceholder.typicode.com/posts/1')
+  .then(response => response.json()) // Converte a resposta em JSON
+  .then(data => console.log('Usuários:',data))   // Exibe os dados no console
+  .catch(error => console.error('Erro:', error)); // Trata erros
 */
 
 import express from "express";
